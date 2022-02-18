@@ -6,6 +6,38 @@
 <html lang="en">
 <head>
   <title>Ji-Yeong Kim's Portfolio</title>
+  <link href="styles/main.css" rel="stylesheet" type="text/css">
+  <style>
+    caption {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 8px;
+    }
+
+    table, th, td {
+      border: 1px solid #0d1f2d;
+      border-collapse: collapse;
+      padding: 5px 10px;
+    }
+
+    table {
+      width: 90%;
+      margin: auto;
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    th {
+      background-color: #546a7b;
+      color: #f2eded;
+    }
+
+    tr:nth-child(even) {
+      background-color: #e4c3ad;
+    }
+  </style>
   </head>
   <body>
     <main><!-- The main element contains all blocks on the page -->
@@ -14,17 +46,17 @@
           <h1>Portfolio for Ji-Yeong Kim</h1>
       </header>
 
-      <nav> <!-- The nav element will include navigation buttons or links -->
-          <hr />
+      <nav class="border"> <!-- The nav element will include navigation buttons or links -->
+
           <!-- We need to add links to projects.html, contact.html, and testimonials.html -->
           <p><a href="projects.html">Projects</a></p>
           <p><a href="contact.html">Contact</a></p>
           <p><a href="testimonials.html">Testimonials</a></p>
-          <hr />
+
       </nav>
 
       <section> <!-- The section element contains the three chunks we are using to sell ourselves in this page. -->
-        <article id="about-me"> <!-- This is the first chunk inside the section element. -->
+        <article class="border" id="about-me"> <!-- This is the first chunk inside the section element. -->
             <h2><em>About Me</em></h2>
             <img src="images/steven.jpg" alt="Portrait of Ji-Yeong Kim">
             <p>Sed nisi est, aliquam non gravida et, euismod id ex. <strong>Praesent molestie metus justo</strong>, non tristique nisl blandit id. Proin porta nisl eros, vitae laoreet eros vestibulum in. Integer faucibus malesuada purus quis consectetur.</p>
