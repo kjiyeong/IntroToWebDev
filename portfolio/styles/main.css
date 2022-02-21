@@ -50,7 +50,7 @@ nav a {
   padding: 8px;
   border: thin solid #0d1f2d;
   text-decoration: none;
-  text-align: center;
+  /*text-align: center; */
   display: block;
   margin: 20px;
   width: 100px;
@@ -69,6 +69,7 @@ nav a:active {
 nav a:visited {
   color: #e4c3ad;
 }
+
 
 /* Form styling */
 label, fieldset {
