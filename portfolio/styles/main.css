@@ -22,6 +22,11 @@ article img {
   float:left;
 }
 
+div p {
+
+  padding-left: 275px;
+}
+
 article {
   margin-bottom: 16px;
 }
