@@ -17,18 +17,24 @@ var totalArchers = 0;         // number of kids who are actually doing archery i
 // - assign the value of kidsWhoWantToSwim to totalSwimmers
 // - assign the value of kidsWhoWantDoArchery to totalArchers
 
-// If kidsWhoWantToSwim is odd, then at least one kid doesn't have a swimming buddy. 
+// If kidsWhoWantToSwim is odd, then at least one kid doesn't have a swimming buddy.
 // To avoid leaving anyone out, we'll just do archery that afternoon.
 // - add the values of kidsWhoWantToSwim and kidsWhoWantDoArchery and assign the result to totalArchers
 // - totalSwimmers should remain at 0
 
 // Hint: ------------------
-// You can use the modulo operator (%) to determine if a number is even. 
+// You can use the modulo operator (%) to determine if a number is even.
 // If it's even, n % 2 will be zero because there is no remainder when an even number is divided by 2.
 // ------------------------
 
 // Write your code here:
-
+if (kidsWhoWantToSwim % 2 == 0){
+    totalSwimmers=kidsWhoWantToSwim;
+    totalArchers=kidsWhoWantDoArchery;
+}
+if (kidsWhoWantToSwim % 2 == 1){
+    totalArchers=kidsWhoWantToSwim + kidsWhoWantDoArchery;
+}
 
 
 // When you're finished, save the changes and open practice/02-if-statements/index.html with your browser. (The html file is is the same subfolder as this file, and it already includes code to reference this file.)
