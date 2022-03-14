@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CODE-ALONG: Click to Add Items</title>
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>CODE-ALONG: Click to Add Items</h1>
+
+        <form name="numberFun" class="needs-validation" onsubmit="return validate();"
+            onreset="resetView();" novalidate>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="num1">Num 1</label>
+                    <input type="number" class="form-control" id="num1" required>
+                    <div class="invalid-feedback">
+                        Num 1 is required and must be a number.
+                    </div>
+                </div> <!-- end .form-group -->
+                <div class="form-group col">
+                    <label for="num2">Num 2</label>
+                    <input type="number" class="form-control" id="num2" required>
+                    <div class="invalid-feedback">
+                        Num 2 is required and must be a number.
+                    </div>
+                </div> <!-- end .form-group -->
+            </div><!-- end .form-row -->
+
+            <div class="form-row">
+                <div class="form-group col">
+                    <button type="submit" id="submitButton" class="btn btn-primary">
+                        Calculate</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </div> <!-- end .form-row -->
+        </form>
+
+        <table id="results" class="table table-striped" style="display: none">
+            <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Addition (+)</td>
+                    <td><span id="addResult"></span></td>
+                </tr>
+                <tr>
+                    <td>Subtraction (-)</td>
+                    <td><span id="subtractResult"></span></td>
+                </tr>
+                <tr>
+                    <td>Multiplication (*)</td>
+                    <td><span id="multiplyResult"></span></td>
+                </tr>
+                <tr>
+                    <td>Division (/)</td>
+                    <td><span id="divideResult"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div> <!-- end .container -->
+
+    <script src="clickToAddItems.js"></script>
+</body>
+</html>

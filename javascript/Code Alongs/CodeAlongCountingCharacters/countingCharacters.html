@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/JavaScript" src="countingCharacters.js"></script>
+    </head>
+
+    <body>
+    </body>
+</html>

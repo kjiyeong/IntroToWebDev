@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+    <title>Lucky Sevens</title>
+    <style>
+    table, th, td {
+      border: 5px solid rgb(145, 235, 220);
+      border-collapse: collapse;
+      font-family: 'Lobster', cursive;
+      font-size: 1.2em;
+      color:rgb(245, 84, 178);
+    }
+    h1,h2{
+        text-align:center;
+        font-family: 'Kaushan Script', cursive;
+        color:rgb(233, 157, 71)
+    }
+
+    .startLabel{
+    font-family:'Graduate', cursive;
+    color:rgb(75, 95, 28);
+    font-size: 1.2em;
+    }
+    </style>
+</head>
+<body>
+<h1>Lucky Sevens</h1>
+<center><label for="firstNumber" class="startLabel">Starting bet:</label> <input id="firstNumber" type="number"><br><br>
+<br><br></center>
+<center><button style= "padding: 15px 15px 15px 15px; border-radius: 10px" id="calculate" onClick="majinBuu()">Play</button></center>
+<hr>
+<h2> RESULTS </h2>
+<table style="width:100%">
+  <tr>
+    <td>Starting Bet</td>
+    <td><p id="startingBet"></p></td>
+  </tr>
+  <tr>
+    <td>Total Rolls Before Going Broke</td>
+    <td><p id="totalRoll"></p></td>
+  </tr>
+  <tr>
+    <td>Highest Amount Won</td>
+    <td><p id="highestWon"></p></td>
+  </tr>
+  <tr>
+    <td>Roll Count at Highest Amount Won</td>
+    <td><p id="rollCountHighestWon"></p></td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  function majinBuu(){
+    let firstNum = parseInt(document.getElementById("firstNumber").value);
+
+    if(firstNum < 0 ){
+    alert("This ain't it,chief");
+    return;
+  }
+let money = firstNum;
+let totalRoll = 0;
+let highestWon = 0;
+let rollCountHighestWon = 0;
+while(money >0) {
+  let dice1 = rollDice();
+  let dice2 = rollDice();
+  if ((dice1+dice2) ===7){
+    money = money+4;
+  }else {
+    money = money-1;
+  }
+if (highestWon < money ){
+  highestWon = money;
+  rollCountHighestWon = totalRoll +1;
+}
+  totalRoll++;
+}
+document.getElementById("startingBet").innerHTML = "$ " +firstNum;
+document.getElementById("totalRoll").innerHTML = " " +totalRoll;
+document.getElementById("highestWon").innerHTML = "$ "+highestWon;
+document.getElementById("rollCountHighestWon").innerHTML = " " +rollCountHighestWon;
+ }
+ function rollDice(){
+   return Math.floor(Math.random() * Math.floor(6))+1;
+ }
+</script>
+</body>
+</html>

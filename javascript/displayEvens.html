@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Display Evens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gotu', sans-serif;
+        }
+
+        h1 {
+            text-align: left;
+            color: rgb(167, 112, 112);
+        }
+
+        .container {
+            background-color: rgba(155, 250, 237, 0.87);
+            padding: 3%;
+        }
+
+        .right-label{
+            display:inline-block;
+            text-align:right;
+            width:200px;
+        }
+        #calculate {
+            background-color: rgba(30, 144, 255); 
+            margin-left: 1b0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Display Evens</h1>
+
+    <label class="right-label" for="firstNumber">Starting Number: </label><input id="firstNumber" type="number">
+    <br><br>
+    <label class="right-label" for="secondNumber">Ending Number:</label> <input id="secondNumber"  type="number">
+    <br><br>
+    <label class="right-label" for="step">Step:</label> <input id="step" type="number">
+    <br><br>
+
+    <button id="calculate" onClick="displayEven()">Calculate</button>
+
+
+    <table id="results" class="table table-striped" style="display: none">
+        <p id="texts"> </p>
+        <p id="ans"> </p>
+
+
+ <script type="text/JavaScript">
+        function displayEven() {
+            let firstNum = parseInt(document.getElementById("firstNumber").value);
+            let secondNum = parseInt(document.getElementById("secondNumber").value);
+            let stepCounter = parseInt(document.getElementById("step").value);
+            if (firstNum > secondNum || stepCounter < 1) {
+                alert("Error.");
+                return;
+            }
+
+            let an = "";
+            for (let x = firstNum; x <= secondNum; x += stepCounter) {
+                if (x % 2 === 0) {
+                    an = an + "<br>" + x;
+                }
+            }
+            document.getElementById("texts").innerHTML = "Here are the even numbers between " + firstNum + " and " + secondNum + " by " + stepCounter + "'s";
+            document.getElementById("ans").innerHTML = an;
+        }
+    </script>
+</body>
+
+</html>
